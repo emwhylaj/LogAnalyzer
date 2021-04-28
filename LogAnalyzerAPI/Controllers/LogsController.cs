@@ -40,6 +40,8 @@ namespace LogAnalyzerAPI.Controllers
             return StatusCode(StatusCodes.Status204NoContent, new { Success = true, Message = "Log files deleted successfully" });
         }
 
+        [HttpGet]
+        [Route("Duplicate")]
         public IActionResult DuplicateLogFiles(string path)
         {
             return Ok(_count.DuplicateFiles(path));
